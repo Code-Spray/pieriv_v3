@@ -1,0 +1,162 @@
+:root {
+    /* === الألوان مبنية على الهوية البصرية الفعلية لمطعم PieRev (باي ريف) === */
+    /* الديكور الحقيقي: جدران كريمية دافئة، قناطر بإضاءة نحاسية/ذهبية، خشب غامق، لمسات خضراء === */
+    --flour: #F4EEDF;
+    /* خلفية فاتحة - عاجي دافي بدل الكريمي القديم */
+    --cream: #FBF7EC;
+    /* لون أفتح شوية للهيدر والكروت فوق الخلفية */
+    --tomato: #A9812E;
+    /* دهبي غامق للعناوين والأسعار بدل الأحمر */
+    --basil: #1C1B19;
+    /* أسود فحمي للخطوط والحدود بدل الأخضر */
+    --basil-dark: #141311;
+    /* أسود غامق لحالة الـ hover */
+    --char: #171512;
+    /* لون النص الأساسي - أسود دافي */
+    --parmesan: #C9A227;
+    /* دهبي زاهي للحدود والتفاصيل */
+    --gold-light: #E8CD82;
+    /* دهبي فاتح للأزرار والـ hover */
+    --muted: #8A7F6F;
+    /* رمادي بني هادي للنصوص الثانوية */
+    --shadow: rgba(23, 21, 18, 0.18);
+    --on-gold: #171512;
+    /* لون نص ثابت فوق الخلفيات الدهبية عشان يفضل واضح في الوضعين */
+    --brightGreen: #22c713;
+    --calmRed : #B5432B;
+
+    font-size: 16px;
+}
+
+/* وضع الليل - نفس الهوية دهبي × أسود لكن مقلوبة لخلفية سوداء فخمة */
+body.dark-mode {
+    --flour: #0E0D0B;
+    --cream: #17140F;
+    --tomato: #D4AF37;
+    --basil: #C9A227;
+    --basil-dark: #241F14;
+    --char: #F1E9D8;
+    --parmesan: #E7C860;
+    --gold-light: #3A331F;
+    --muted: #B3A78C;
+    --shadow: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+    color: var(--char);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: var(--cream);
+    padding: 1px;
+    border-bottom: 1px solid var(--parmesan);
+    transition: background-color 0.3s ease;
+}
+
+.nav_and_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0% 4% 0 4%;
+}
+
+.logo {
+    width: 4.375rem;
+    height: 4.375rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.lang_button {
+    font-weight: 600;
+    transition: all 0.4s;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.current_lang_and_arrow {
+    display: flex;
+    align-items: center;
+    background-color: var(--gold-light);
+    border-radius: 5px;
+    padding: 0 2px 2px 5px;
+    gap: 3px;
+}
+
+.current_lang_and_arrow i {
+    transition: all 0.4s;
+    margin-top: 3px;
+}
+
+.lang_button ul {
+    position: absolute;
+    width: 100%;
+    margin-top: 6px;
+}
+.lang_button.open .current_lang_and_arrow i{
+    rotate: 180deg;
+}
+
+.lang_button.close ul {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    background-color: var(--calmRed);
+}
+
+.lang_button.open ul {
+    background-color: var(--calmRed);
+    color: var(--on-gold);
+    border-radius: 5px;
+}
+
+.lang_button ul li {
+    list-style: none;
+    margin: 2px 0 2px 4px;
+}
+
+.theme {
+    display: flex;
+    background-color: var(--gold-light);
+    border-radius: 30px;
+    padding: 2px 3px;
+    gap: 7px;
+    cursor: pointer;
+    height: fit-content;
+
+}
+
+.theme i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.theme i.active{
+    background-color: var(--calmRed);
+    color: #fff;
+}
+
+@media(max-width:769px) {}

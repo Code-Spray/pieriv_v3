@@ -1,0 +1,445 @@
+:root {
+    /* === الألوان مبنية على الهوية البصرية الفعلية لمطعم PieRev (باي ريف) === */
+    /* الديكور الحقيقي: جدران كريمية دافئة، قناطر بإضاءة نحاسية/ذهبية، خشب غامق، لمسات خضراء === */
+    --flour: #F3ECDC;
+    /* لون الخلفية - كريمي دافي زي جدران المطعم */
+    --cream: #FBF6EC;
+    /* تعديل: لون فاتح إضافي للكروت والأسطح فوق الخلفية عشان يبقى فيه عمق بدل لون واحد مسطح */
+    --tomato: #B5432B;
+    /* تعديل: كان #9C2B1F، دفّيته شوية لدرجة تراكوتا اللي قريبة من ألوان المطعم الحقيقية بدل أحمر طماطم غامق قوي */
+    --basil: #2F4B33;
+    /* أخضر ريحان غامق - زي النباتات في ديكور المطعم */
+    --basil-dark: #23392B;
+    /* تعديل: كان #17261B (غامق جدًا قريب من الأسود)، خففته شوية عشان يبان أخضر واضح بدل ما يقرب للأسود */
+    --char: #2B211C;
+    /* بني محروق - زي الخشب الغامق في المطعم */
+    --parmesan: #C9A227;
+    /* لمسة ذهبية - زي الإضاءة والتفاصيل النحاسية في القناطر */
+    --gold-light: #E4C874;
+    /* تعديل: درجة ذهبية أفتح لل hover والتفاصيل الصغيرة عشان مايبقاش كل حاجة بنفس درجة parmesan */
+    --muted: #8A7F6F;
+    /* تعديل: لون بني رمادي هادي للنصوص الثانوية زي الوصف والتفاصيل اللي مش محتاجة تلفت النظر */
+    --shadow: rgba(43, 33, 28, 0.18);
+    /* تعديل: ظل موحّد مبني على --char بدل ما يبقى أسود عادي، عشان يفضل جو المطعم الدافي */
+    --brightGreen: rgb(29, 167, 17);
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--flour);
+    color: var(--char);
+    font-family: "Lato";
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    width: fit-content;
+    margin: auto;
+    margin-top: 70px;
+    font-size: 60px;
+    color: var(--flour);
+    background-color: var(--tomato);
+    padding: 10px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px var(--shadow);
+    letter-spacing: 1px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.normal_line {
+    display: block;
+    width: 60%;
+    height: 1px;
+    margin: 20px auto 40px;
+    background-image: linear-gradient(to right, transparent, var(--basil), transparent);
+}
+
+section {
+    margin: 0 20px 45px;
+}
+
+.type_and_edit {
+    background-color: var(--parmesan);
+    display: flex;
+    position: relative;
+    height: 44px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px var(--shadow);
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    width: 74px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid var(--char);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin: 0 4px;
+}
+
+.type_and_edit h2 {
+    color: var(--char);
+    margin: auto;
+    letter-spacing: 2px;
+    font-size: 1.15rem;
+}
+
+.cards_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid;
+    background-color: var(--gold-light);
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 0 8px #626161;
+    transform: scale(1.005);
+    background-color: var(--parmesan);
+    border-color: var(--tomato);
+}
+
+.card .title_and_edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card button {
+    display: block;
+    width: 74px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--basil);
+    color: var(--flour);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.card button:hover {
+    background-color: var(--basil-dark);
+    transform: scale(1.06);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.card h3 {
+    width: fit-content;
+    border-bottom: 1px solid var(--char);
+}
+
+.card .info_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info {
+    display: flex;
+}
+
+.card .label {
+    white-space: nowrap;
+}
+
+.add_card {
+    background-color: var(--gold-light);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px dashed;
+}
+
+.add_card:hover {
+    transform: scale(1.005);
+    background-color: var(--parmesan);
+    box-shadow: 0 0 8px #626161;
+}
+
+.add_card .circle {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--char);
+    border-radius: 50%;
+    position: relative;
+}
+
+.add_card .circle i {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 40px;
+        padding: 8px 24px;
+    }
+
+    section {
+        margin: 0 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card .info_container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .info {
+        flex-wrap: wrap;
+    }
+
+    .type_and_edit h2 {
+        font-size: 1rem;
+    }
+
+    .type_and_edit button,
+    .title_and_edit button {
+        width: 55px;
+        height: 25px;
+    }
+}
+
+/*==========================================================*/
+.card_in_edit {
+    border: 1px solid;
+    background-color: var(--gold-light);
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.card_in_edit:hover {
+    box-shadow: 0 0 8px #626161;
+    transform: scale(1.005);
+    background-color: var(--parmesan);
+    border-color: var(--tomato);
+}
+
+.card_in_edit .title_and_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete_and_cancel {
+    display: flex;
+    gap: 4px;
+}
+
+.save_button {
+    background-color: var(--brightGreen);
+    margin: auto;
+    margin-top: 15px;
+}
+
+.save_button:hover {
+    background-color: #1da711;
+    transform: scale(1.01);
+}
+
+.delete_button {
+    background-color: #fc0b0b;
+}
+
+.delete_button:hover {
+    background-color: #b71212;
+    transform: scale(1.01);
+}
+
+.cancel_button {
+    background-color: #F9FAFB;
+}
+
+.cancel_button:hover {
+    background-color: #E5E7EB;
+    transform: scale(1.01);
+
+}
+
+.card_in_edit h3 {
+    width: fit-content;
+    border-bottom: 1px solid var(--char);
+}
+
+.card_in_edit .info_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info {
+    display: flex;
+}
+
+.card_in_edit .label {
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.card_in_edit input {
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 2px;
+    outline: 0;
+}
+
+.add_card {
+    background-color: var(--gold-light);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px dashed;
+}
+
+.add_card:hover {
+    transform: scale(1.005);
+    background-color: var(--parmesan);
+    box-shadow: 0 0 8px #626161;
+}
+
+.add_card .circle {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--char);
+    border-radius: 50%;
+    position: relative;
+}
+
+.add_card .circle i {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 40px;
+        padding: 8px 24px;
+    }
+
+    section {
+        margin: 0 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card_in_edit .info_container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .type_and_save h2 {
+        font-size: 1rem;
+    }
+
+    .type_and_save button,
+    .title_and_buttons button {
+        width: 55px;
+        height: 25px;
+    }
+}
+
+/*===============================================*/
+.main_blur {
+    filter: blur(3px);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ensure_delete {
+    width: 300px;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--tomato);
+    padding: 6px;
+}
+
+.ensure_delete .normal_line {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.h3_and_x {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ensure_delete h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.ensure_delete p {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.ensure_delete i {
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.ensure_delete .delete_button {
+    border-radius: calc(10px - 6px);
+    margin: 0;
+}
+
+.ensure_delete .cancel_button {
+    border-radius: calc(10px - 6px);
+    margin: 0;
+}
+
+.delete_and_cancel {
+    justify-content: flex-end;
+}
