@@ -55,6 +55,7 @@ body {
 }
 
 .types_container {
+    white-space: nowrap;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -138,33 +139,41 @@ body {
         height: 150px;
     }
 
-    .types_container {
-        gap: 15px;
+    .types_container_with_lines .normal_line{
+        margin: 15px 0;
     }
 
+    .types_container {
+        gap: 15px;
+        font-size: 12px;
+    }
+    
     .types_container::-webkit-scrollbar {
         display: none;
     }
-
+    
     .card {
         margin: 5px 10px 5px 10px;
     }
-
+    
     .special_line {
         width: 40vw;
     }
-
+    
     .special_line .line {
         width: 18vw;
+    }
+}
+@media(max-width:375px) {
+    .types_container {
+        gap: 15px;
+        font-size: 10px;
     }
 }
 
 @media(max-width:320px) {
     .types_container {
-        overflow-x: auto;
-        white-space: nowrap;
-        justify-content: flex-start;
-        margin-left: 30px;
+        gap:6px;
     }
 
     .special_line {
