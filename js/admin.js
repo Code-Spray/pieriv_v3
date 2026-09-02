@@ -1,10 +1,12 @@
 let all_products = JSON.parse(localStorage.getItem("local_products"));
-let all_types = JSON.parse(localStorage.getItem("lacal_types"));
+let all_types = JSON.parse(localStorage.getItem("local_types"));
 let main = document.querySelector("main")
 console.log("all_products = ", all_products)
 console.log("all_types = ", all_types)
 
-Object.values(all_types).forEach(renderTypes)
+Object.values(all_types).forEach((value) => {
+    renderTypes(value)
+})
 
 gitEditAllWork()
 
